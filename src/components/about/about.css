@@ -1,0 +1,38 @@
+.abtt-cont{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.abtt-cont-1-div-2{
+    color: #0796d6 ;
+}
+.abtt-cont-1{
+    font-weight: bold;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.abtt-cont-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.abtt-icons{
+    background-color: #f7f7f7;
+    height: 500px;
+}
+.abtt-icon-main{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 100px;
+}
+.abtt-icon-css{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
