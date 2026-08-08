@@ -35,6 +35,9 @@ span{
     align-items: center;
     gap: 30px;
 }
+.box-1:hover{
+    transform: scale(1.1);
+}
 .box-name{
     font-weight: bold;
     font-size: 25px;
