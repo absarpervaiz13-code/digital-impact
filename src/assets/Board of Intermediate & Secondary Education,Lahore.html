@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)https://result.biselahore.com/ResultPart2.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="shortcut icon" href="./Board of Intermediate &amp; Secondary Education,Lahore_files/mono.jpg"><title>
+	Board of Intermediate &amp; Secondary Education,Lahore
+</title>
+    <script src="./Board of Intermediate &amp; Secondary Education,Lahore_files/PIE.js.download" type="text/javascript"></script>
+    <script src="./Board of Intermediate &amp; Secondary Education,Lahore_files/json2.js.download" type="text/javascript"></script>
+    <script src="./Board of Intermediate &amp; Secondary Education,Lahore_files/DateFormatter.js.download" type="text/javascript"></script>
+    <script src="./Board of Intermediate &amp; Secondary Education,Lahore_files/BISE_NewRegistration.js.download" type="text/javascript"></script>
+    <script src="./Board of Intermediate &amp; Secondary Education,Lahore_files/jquery-1.10.1.min.js.download" type="text/javascript"></script>
+    <style type="text/css">
+        @media print
+        {
+            .printOption
+            {
+                display: none;
+                size: landscape;
+            }
+        }
+        .div1
+        {
+            height: 0.9em;
+            width: 0.8em;
+            -webkit-border-radius: 0.5em;
+            -moz-border-radius: 0.5em;
+            border: 0.1em solid Black;
+            background-color: White;
+            behavior: url('Scripts/PIE.htc');
+            border-radius: 0.5em;
+            margin: auto;
+            text-align: center;
+            font-size: 0.8em;
+        }
+        .div2
+        {
+            height: 1em;
+            text-align: center;
+            width: 1em;
+            -webkit-border-radius: 1em;
+            -moz-border-radius: 1em;
+            border: 0.1em solid Black;
+            behavior: url('Scripts/PIE.htc');
+            border-radius: 1em;
+            background-color: Black;
+            margin: auto;
+            font-size: 1em;
+        }
+        
+        .P1
+        {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 0.1em;
+            margin-top: -2em !important;
+        }
+        .div3
+        {
+            font-weight: bold;
+            font-size: large;
+        }
+        .style2
+        {
+            font-size: x-large;
+            text-align: center;
+        }
+        .style4
+        {
+            text-align: center;
+            font-size: large;
+            font-weight: 700;
+        }
+        .style6
+        {
+            width: 6%;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .style7
+        {
+            text-align: left;
+            width: 282px;
+        }
+        .style8
+        {
+            width: 278px;
+        }
+        .style9
+        {
+            font-size: 16px;
+            text-decoration: underline;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .style10
+        {
+            width: 231px;
+        }
+        .btnStyle {
+    background: linear-gradient(135deg, #28a745, #218838); /* green gradient */
+    color: #fff !important;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* pill-shaped */
+    padding: 12px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btnStyle:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.btnStyle:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+    </style>
+    <script type="text/javascript">
+        ///code by zahid 
+
+        var array = new Array();
+        var RollLength = 0;
+        var counter = 0;
+        function FillBoxes() {
+
+            var roll = document.getElementById('hdrollno1').value;
+            var counter = 0;
+            while (counter < 6) {
+                array[5 - counter] = roll % 10;
+                roll = Math.floor(roll / 10);
+                counter++;
+
+            }
+            createTable();
+
+
+        }
+        function createTable() {
+
+            var root = document.getElementById('mydiv');
+            var tab = document.createElement('table');
+            tab.className = "mytable";
+            var tbo = document.createElement('tbody');
+            var row, cell;
+            var counter = 0;
+            ////header
+            row = document.createElement('tr');
+            cell = document.createElement('td');
+            cell.setAttribute('colspan', '6');
+            cell.setAttribute('Align', 'center');
+            var div = document.createElement('div');
+            div.setAttribute('class', 'div3');
+            div.innerHTML = "Roll No";
+            cell.appendChild(div)
+            row.appendChild(cell);
+            tbo.appendChild(row);
+            ///
+            ////rollno
+            row = document.createElement('tr');
+            for (var i = 0; i < 6; i++) {
+                cell = document.createElement('td');
+                cell.setAttribute('Align', 'center');
+                var div = document.createElement('div');
+                div.setAttribute('class', 'div3');
+                div.innerHTML = array[i];
+                cell.appendChild(div)
+                row.appendChild(cell);
+
+            }
+            tbo.appendChild(row);
+
+            ////
+            for (var i = 0; i < 10; i++) {
+                row = document.createElement('tr');
+                for (var j = 0; j < 6; j++) {
+                    cell = document.createElement('td');
+
+                    if (array[j] == i) {
+                        var div = document.createElement('img');
+                        div.src = "Images/Blackhole.png";
+                        div.setAttribute('class', 'div2');
+                        counter++;
+                        cell.appendChild(div);
+                    }
+                    else {
+                        var div = document.createElement('div');
+                        div.setAttribute('class', 'div1');
+                        cell.appendChild(div);
+                        div.innerHTML = i;
+                    }
+                    row.appendChild(cell);
+                }
+                tbo.appendChild(row);
+            }
+            tab.appendChild(tbo);
+            root.appendChild(tab);
+
+        }
+        
+    
+    </script>
+</head>
+<body>
+
+        <form method="post" action="https://result.biselahore.com/ResultPart2.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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ZmluZHMgYW55IGRpc2NyZXBhbmN5IGluIHRoZSBSZXN1bHQgSW50aW1hdGlvbiBvciBkZXNpcmVzIGNvcnJlY3Rpb24gaW4gYW55IG9mIHRoZSBwYXJ0aWN1bGFycywgaGUvc2hlIG1heSBjb250YWN0IHRoZSBCb2FyZCB3aXRoaW4gMzAgZGF5cyBhZnRlciBkZWNsYXJhdGlvbiBvZiB0aGUgcmVzdWx0LjwvdT4gQW55IGVudHJ5IGFwcGVhcmluZyBpbiBpdCBkb2VzIG5vdCBpdHNlbGYgY29uZmVyIGFueSByaWdodCBvciBwcml2aWxlZ2UgaW5kZXBlbmRlbnRseSBmb3IgdGhlIGdyYW50IG9mIHByb3BlciBjZXJ0aWZpY2F0ZSwgd2hpY2ggd2lsbCBiZSBpc3N1ZWQgdW5kZXIgdGhlIFJ1bGVzLyBSZWd1bGF0aW9ucy48YnIgLz4oaWkpVGhlIFN0YXIgKCopIGluZGljYXRlcyB0aGF0IHRoZSBjYW5kaWRhdGUgaGFzIHBhc3NlZCB0aGUgc3ViamVjdC9zIHdpdGggY29uY2Vzc2lvbmFsIG1hcmtzIHVuZGVyIEJvYXJkIFJ1bGUuIEluIGNhc2UgaGUvc2hlIGlzIG5vdCB3aWxsaW5nIHRvIGFjY2VwdCB0aGUgY29uY2Vzc2lvbmFsIG1hcmtzLCBuZWNlc3NhcnkgcGVybWlzc2lvbiB0byByZWFwcGVhciBpbiB0aGUgc3ViamVjdC9zIG1heSBiZSBvYnRhaW5lZCB3aXRoaW4gdGhlIHNjaGVkdWxlIGZvciBzdWJtaXNzaW9uIG9mIGFkbWlzc2lvbiBmb3JtIGFuZCBmZWUgZm9yIHRoZSBuZXh0IGltbWVkaWF0ZSBleGFtaW5hdGlvbiBwcm92aWRlZCBoZS9zaGUgaGFzIHRoZSBjaGFuY2UvcyB0byByZS1hcHBlYXIgYXMgYSBjb21wYXJ0bWVudCBjYW5kaWRhdGUgaW4gdGhlIHNhaWQgZXhhbWluYXRpb24uPGJyIC8+KGlpaSlDYW5kaWRhdGUgaW50ZW5kaW5nIHRvIGFwcGx5IGZvciA8dT5yZS1jaGVja2luZyA8L3U+IG9mIGhpcy9oZXIgcGFwZXIvcyBtYXkgYXBwbHkgPGI+T25saW5lPC9iPjx1PiB3aXRoaW4gMTUgZGF5cyBhZnRlciBkZWNsYXJhdGlvbiBvZiB0aGUgcmVzdWx0LjwvdT48YnIgLz4oaXYpQSBjYW5kaWRhdGUgaW50ZW5kaW5nIHRvIGltcHJvdmUgaGlzL2hlciBncmFkZSBvciBtYXJrcyBhcmUgYWxsb3dlZCB0byBhcHBlYXIgaW4gU3ViamVjdC9zIG9yIFBhcnQtSSBvciBQYXJ0LUlJIG9yIGJvdGggd2l0aCBvbmUgZXhhbWluYXRpb24gb3Bwb3J0dW5pdHkgd2l0aGluIG9uZSB5ZWFyIG9mIHBhc3NpbmcgcmVsZXZhbnQgZXhhbWluYXRpb24gaW4gdGhlIHNhbWUgZ3JvdXAvc3ViamVjdHMgaW4gY3VycmVudC9wcmV2YWxlbnQgc3lsbGFidXMuIElmIHRoZSBjYW5kaWRhdGUgcXVhbGlmaWVkIHN1YmplY3QvcyB3aXRoIGNvbmNlc3Npb25hbCBtYXJrcywgaGUvc2hlIHdpbGwgYWxzbyBoYXZlIHRvIGFwcGVhciBhbmQgcXVhbGlmeSBpbiB0aG9zZSBzdWJqZWN0L3MgZm9yIGltcHJvdmVtZW50IG9mIG1hcmtzL2dyYWRlLiBJbiBjYXNlIGEgY2FuZGlkYXRlIGZhaWxzIHRvIGltcHJvdmUgaGlzL2hlciBtYXJrcy9ncmFkZSBpbiBhbnkgcGFydCBvciBzdWJqZWN0L3MsIGhpcy9oZXIgcHJldmlvdXMgcmVzdWx0IHdpbGwgcmVtYWluIGludGFjdC48YnIgLz4gKHYpCUEgY2FuZGlkYXRlIHdobyB3YXMgZGVjbGFyZWQgZnVsbCBmYWlsIGluIHRoZSBleGFtaW5hdGlvbiB3aWxsIGhhdmUgdG8gYXBwZWFyLCBpZiBoZSBpbnRlbmRzLCB1bmRlciBwcmV2YWxlbnQvY3VycmVudCBzeWxsYWJ1cy48YnIgLz4odmkpCUlmIHRoZSByZXN1bHQgaW50aW1hdGlvbiBpcyBsb3N0LCB0aGUgcmVzdWx0IGludGltYXRpb24gY2FuIGJlIG9idGFpbmVkIGJ5IHRoZSBjYW5kaWRhdGUgb24gcGF5bWVudCBvZiBwcmVzY3JpYmVkIGZlZS5kAgEPZBYCZg9kFgQCAw8WAh8ABQswNiBBdWcgMjAyNmQCBQ8PFgIeCEltYWdlVXJsBVpRUkNvZGVIYW5kbGVyLmFzaHg/ZGF0YT1odHRwcyUzYSUyZiUyZnJlc3VsdC5iaXNlbGFob3JlLmNvbSUyZlFSJTNkQUVFV1dJR1pVU1NTTE5RVFo3NzgzNjhkZBgBBQ9HcmlkU3R1ZGVudERhdGEPPCsADAEIAgFkgL2jwCuvBs/E9Cmqon3xdQ==">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E2C98662">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAaGEPcpYJAIhysCb1p7fh7wH0vtbr5+ffvt1M8nZeor4LmlHGUHNs2spIfDVxH/v3LWdFoVPya/ulbTSAFhvlGiwcUAVDRHsmbBZ3sutBL2uns7nD5doR9Ilon20avH5sGUbRWxAcsESv+Jn/m2epl4">
+</div>
+        <div>
+        <div id="pnlRollSlip">
+	
+        <input name="hdrollno1" type="hidden" id="hdrollno1">
+        <table cellspacing="0" cellpadding="0">
+            <tbody><tr>
+                <td style="width: 20%">
+                </td>
+                <td style="background-position: center center; width: 60%; background-image: url(&#39;Images/back-logo.jpg&#39;); background-repeat: no-repeat;">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td colspan="3">
+                                <label id="lblError" style="color: Red; font-family: Arial Black;
+                                    font-weight: bold">
+                                    <br>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="style2">
+                                <strong>BOARD OF INTERMEDIATE &amp; SECONDARY EDUCATION, LAHORE</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <table style="width: 876px">
+                                    <tbody><tr>
+                                        <td class="style7">
+                                            &nbsp;
+                                        </td>
+                                        <td rowspan="3" style="text-align: center" class="style8">
+                                            <img id="ImgBoard" src="./Board of Intermediate &amp; Secondary Education,Lahore_files/mono.jpg" style="height:84px;width:91px;">
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style7">
+                                            <label id="lblRollNo0" style="font-weight: bold">
+                                                Roll No:
+                                            </label>
+                                            &nbsp;&nbsp;&nbsp;<label id="lblRollNoval" style="font-weight: bold; font-size: large; text-decoration: underline;">221631</label>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <label>
+                                                Registration No:</label>
+                                            <label id="lblRegNum" style="font-weight: bold; text-decoration: underline;">10076-21112-2023</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style7">
+                                           
+                                        </td>
+                                        <td>
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="text-align: center">
+                                            <label id="lblSession" style="font-weight: bold">SECONDARY SCHOOL CERTIFICATE (ANNUAL) EXAMINATION,<u>2026</u></label>
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style4" colspan="3">
+                                            <label id="Label2">
+                                                GROUP:
+                                            </label>
+                                            <label id="lblGroup" style="text-decoration: underline">SCIENCE</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                          
+                                        </td>
+                                        <td style="text-align: center" class="style8">
+                                          
+                                        </td>
+                                        <td>
+                                         
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                             
+                            </td>
+                            <td>
+                                <center style="width: 631px">
+                                  
+                                </center>
+                            </td>
+                            <td rowspan="2" align="right">
+                                <input name="HiddenPicture" type="hidden" id="HiddenPicture">
+                                <input type="hidden" name="hdPath" id="hdPath">
+                                <input type="hidden" name="hdPrac" id="hdPrac" value="12">
+                                <img id="imgDisplay" alt="Pic" style="width: 124px; height: 115px" src="./Board of Intermediate &amp; Secondary Education,Lahore_files/ImageLoader.aspx">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table style="width: 100%;  font-size: 15px; font-family: &#39;Times New Roman&#39;, Times, serif;" cellspacing="8" cellpadding="0">
+                                    <tbody><tr>
+                                                                                
+                                    </tr>
+                                    <tr>
+                                        <td class="style6">
+                                            <label>
+                                                Student Name:</label><b> </b>
+                                        </td>
+                                        <td style="width: 20%; text-decoration: underline;" class="style9">
+                                            <label id="Name">ABSAAR SHAHID</label>
+                                        </td>
+                                        <td id="Td1" style="width: 5%; text-align: left;" align="right">
+                                        <label id="lblBFARM">35202-8349117-1</label>
+                                            &nbsp;
+                                        </td>
+	
+                                    </tr>
+                                    <tr>
+                                        <td class="style6">
+                                            <label>
+                                                Father Name:</label><b> </b>
+                                        </td>
+                                        <td class="style9">
+                                            <label id="lblFatherName">SHAHID PERVAIZ NASIR</label>
+                                        </td>
+                                        <td align="left">
+                                            <label id="lblFatherNIC">35202-3008038-5</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="style6">
+                                            <label id="lbldb">
+                                                Date Of Birth:</label><b> </b>
+                                        </td>
+                                        <td align="left" class="style9">
+                                            <label id="lblDOB">25/09/2008</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2" class="style6">
+                                            <label id="lblcen">
+                                                Institution/District:</label><b> </b>
+                                        </td>
+                                        <td colspan="4" rowspan="2" class="style9">
+                                            <label id="lblExamCenter">LAHORE</label>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="3">
+                                <table width="100%" cellspacing="0" cellpadding="0">
+                                    <tbody><tr>
+                                        <td colspan="2">
+                                            
+                                            <div>
+		<table cellspacing="0" rules="all" id="GridStudentData" style="color:Black;border-width:1px;border-style:solid;font-family:Arial;font-size:12pt;width:100%;border-collapse:collapse;">
+			<tbody><tr style="background-color:#CCCCCC;font-weight:bold;">
+				<th align="center" colspan="1" rowspan="2">SUBJECT</th><th colspan="3">MAXIMUM MARKS</th><th colspan="3">MARKS OBTAINED</th><th align="center" colspan="1" rowspan="2">TOTAL</th><th align="center" colspan="1" rowspan="2">PERCENTILE SCORE</th><th align="center" colspan="1" rowspan="2">REL. GRADE</th><th align="center" colspan="1" rowspan="2">STATUS</th>
+			</tr><tr style="background-color:#CCCCCC;font-weight:bold;">
+				<th scope="col">TH</th><th scope="col">PR</th><th scope="col">TOTAL</th><th scope="col">TH-I</th><th scope="col">TH-II</th><th scope="col">PR-II</th><th scope="col" style="background-color:White;border-width:0px;border-style:None;">&nbsp;</th><th scope="col" style="background-color:White;border-width:0px;border-style:None;">&nbsp;</th>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">TRANSLATION OF THE HOLY QURAN</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">50+50=100</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">100</td><td align="center" valign="middle" style="width:50px;">47</td><td align="center" valign="middle" style="width:50px;">40</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">87</td><td align="center" valign="middle">87.00</td><td align="center" valign="middle">A</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">URDU</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">75+75=150</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">54</td><td align="center" valign="middle" style="width:50px;">58</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">112</td><td align="center" valign="middle">75.17</td><td align="center" valign="middle">C+</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">ENGLISH</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">75+75=150</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">57</td><td align="center" valign="middle" style="width:50px;">44</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">101</td><td align="center" valign="middle">67.33</td><td align="center" valign="middle">C</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">ISLAMIYAT</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">50+50=100</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">100</td><td align="center" valign="middle" style="width:50px;">47</td><td align="center" valign="middle" style="width:50px;">41</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">88</td><td align="center" valign="middle">88.00</td><td align="center" valign="middle">A</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">PAKISTAN STUDIES</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">50+50=100</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">100</td><td align="center" valign="middle" style="width:50px;">36</td><td align="center" valign="middle" style="width:50px;">45</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">81</td><td align="center" valign="middle">81.00</td><td align="center" valign="middle">B</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">MATHEMATICS</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">75+75=150</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">--</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">47</td><td align="center" valign="middle" style="width:50px;">60</td><td align="center" valign="middle" style="width:50px;">--</td><td align="center" valign="middle" style="width:50px;">107</td><td align="center" valign="middle">71.33</td><td align="center" valign="middle">C+</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">PHYSICS</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">60+60=120</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">30</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">47</td><td align="center" valign="middle" style="width:50px;">45</td><td align="center" valign="middle" style="width:50px;">22</td><td align="center" valign="middle" style="width:50px;">114</td><td align="center" valign="middle">76.00</td><td align="center" valign="middle">C+</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">CHEMISTRY</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">60+60=120</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">30</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">56</td><td align="center" valign="middle" style="width:50px;">37</td><td align="center" valign="middle" style="width:50px;">29</td><td align="center" valign="middle" style="width:50px;">122</td><td align="center" valign="middle">81.33</td><td align="center" valign="middle">B</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;">
+				<td style="width:300px;">BIOLOGY</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:100px;">60+60=120</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">30</td><td align="center" valign="middle" style="background-color:#CCCCCC;width:50px;">150</td><td align="center" valign="middle" style="width:50px;">44</td><td align="center" valign="middle" style="width:50px;">54</td><td align="center" valign="middle" style="width:50px;">25</td><td align="center" valign="middle" style="width:50px;">123</td><td align="center" valign="middle">82.00</td><td align="center" valign="middle">B+</td><td align="center" valign="middle" style="width:50px;">PASS</td>
+			</tr><tr style="height:30px;font-weight:bold;">
+				<td style="width:300px;">TOTAL</td><td align="center" valign="middle" colspan="3" style="background-color:#CCCCCC;width:100px;">1200</td><td align="center" valign="middle" colspan="7" style="background-color:White;width:50px;">MARKS OBTAINED:PASS 935 A</td>
+			</tr>
+		</tbody></table>
+	</div>
+                                           <br>
+
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td align="left" colspan="2">
+                                        <label id="lblResultinSentences" style="font-weight: bold; font-size: 22px; font-family: Calibri;">The candidate has Passed and obtained Marks Nine Hundred and Thirty Five.</label></td>
+                                </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="tbl" width="100%" style="font-size: 15px" cellspacing="0" cellpadding="0">
+		<tbody><tr>
+			<td colspan="2" style="font-family: &#39;Times New Roman&#39;, Times, serif;">
+                                                        <label id="lblnote" style="font-family: Calibri; font-size: medium"> <h5>NOTE:</h5>(i)This provisional result intimation is issued as a notice only. Errors and omissions excepted.<u> If a candidate finds any discrepancy in the Result Intimation or desires correction in any of the particulars, he/she may contact the Board within 30 days after declaration of the result.</u> Any entry appearing in it does not itself confer any right or privilege independently for the grant of proper certificate, which will be issued under the Rules/ Regulations.<br>(ii)The Star (*) indicates that the candidate has passed the subject/s with concessional marks under Board Rule. In case he/she is not willing to accept the concessional marks, necessary permission to reappear in the subject/s may be obtained within the schedule for submission of admission form and fee for the next immediate examination provided he/she has the chance/s to re-appear as a compartment candidate in the said examination.<br>(iii)Candidate intending to apply for <u>re-checking </u> of his/her paper/s may apply <b>Online</b><u> within 15 days after declaration of the result.</u><br>(iv)A candidate intending to improve his/her grade or marks are allowed to appear in Subject/s or Part-I or Part-II or both with one examination opportunity within one year of passing relevant examination in the same group/subjects in current/prevalent syllabus. If the candidate qualified subject/s with concessional marks, he/she will also have to appear and qualify in those subject/s for improvement of marks/grade. In case a candidate fails to improve his/her marks/grade in any part or subject/s, his/her previous result will remain intact.<br> (v)	A candidate who was declared full fail in the examination will have to appear, if he intends, under prevalent/current syllabus.<br>(vi)	If the result intimation is lost, the result intimation can be obtained by the candidate on payment of prescribed fee.</label>
+                                                    </td>
+		</tr>
+		<tr>
+			<td colspan="1" style="width: 75%">
+                                                        
+                                                            <label id="Label1">
+                                                    <strong>Result Decleared On:</strong></label><b> </b>&nbsp;&nbsp;&nbsp; 
+                                                &nbsp;
+                                                <label id="lblResultdate">06 Aug 2026</label>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <img id="imgQR" src="./Board of Intermediate &amp; Secondary Education,Lahore_files/QRCodeHandler.ashx" style="height:106px;width:122px;">
+                                                     <br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>
+                                                <a href="https://www.biselahore.com/">https://www.biselahore.com</a><br> 
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>
+                                                    </td>
+			<td align="right">
+                                                        <img src="./Board of Intermediate &amp; Secondary Education,Lahore_files/signtouseef.jpg" style="height: 102px; width: 102px; margin-left: 0px;" alt="">
+                                                        <br>
+                                                        <label style="font-weight: bold; font-family: Arial; font-size: 12px">
+                                                            Controller of Examinations</label>
+                                                    </td>
+		</tr>
+	</tbody></table>
+	
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <label id="lbltabname" style="font-weight: bold; font-size: 15px">
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    </tbody><caption>
+                                        <br>
+                                        </caption><tbody><tr>
+                                            <td>
+                                                <div id="mydiv">
+                                                    </div>
+                                                <br>
+                                            </td>
+                                            <td align="right" class="style10">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" colspan="2">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+                <td style="width: 20%">
+                </td>
+            </tr>
+        </tbody></table>
+        
+</div>
+        <div class="printOption" style="text-align: center; margin: 20px;">
+   <hr color="darkgreen">
+        <input type="submit" name="btnPrint" value="Print" onclick="javascript:window.print(); return false;" id="btnPrint" class="btnStyle">
+       
+    </div>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+Checkbrowser('SSC_Ann_2026/1/A26/0306/66/2/1337/PIC/668165.jpg');//]]>
+</script>
+
+   
+
+
+</div></form></body></html>

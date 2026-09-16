@@ -11,7 +11,7 @@ const Navbar = () => {
         <>
             <nav>
                 <div className="nav-main">
-                    <img className="img-1" src={digitalimpactlogo} alt="" height={200} width={200} />
+                    <img className="img-1" src={digitalimpactlogo} alt="" height={100} width={100} />
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/services">Services</Link></li>

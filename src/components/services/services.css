@@ -16,7 +16,7 @@ span{
 .boxes{
     padding-top: 50px;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
 
@@ -34,10 +34,12 @@ span{
     justify-content: center;
     align-items: center;
     gap: 30px;
+    transition: transform 0.8s ease;
 }
-.box-1:hover{
-    transform: scale(1.1);
+.Box-1:hover {
+  transform: scale(1.1); /* size 10% badh jayegi */
 }
+
 .box-name{
     font-weight: bold;
     font-size: 25px;

@@ -46,4 +46,9 @@ main {
     border-radius: 20px;
     color: aliceblue;
     margin-left: 530px;
+    transition: transform 0.8s ease;
+}
+
+.cont-btt:hover {
+  transform: scale(1.2); /* size 10% badh jayegi */
 }
